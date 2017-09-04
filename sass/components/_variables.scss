@@ -1,0 +1,7 @@
+$phone:         "only screen and (max-width: 767px)";
+$tablet:        "only screen and (max-width: 991px)";
+$desktop:       "only screen and (min-width: 992px)";
+
+$medias:        ($phone,        $tablet);
+$classes:       ("rrt-mobile",  "rrt-tablet");
+$default-class:  "rrt-mobile";
