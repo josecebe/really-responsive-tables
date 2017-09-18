@@ -1,5 +1,4 @@
 .really-responsive-table {
-	table-layout: fixed;
 	width: 100%;
 
 	th, td {
@@ -29,6 +28,8 @@
 
 	@media #{$media} {
 		#{$prefix} {
+			table-layout: fixed;
+
 			> thead {
 				display: none;
 			}
