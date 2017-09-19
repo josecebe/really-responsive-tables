@@ -1,5 +1,4 @@
 .really-responsive-table {
-  table-layout: fixed;
   width: 100%;
 }
 
@@ -18,6 +17,9 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .really-responsive-table, .really-responsive-table.rrt-mobile {
+    table-layout: fixed;
+  }
   .really-responsive-table > thead, .really-responsive-table.rrt-mobile > thead {
     display: none;
   }
@@ -43,6 +45,9 @@
 }
 
 @media only screen and (max-width: 991px) {
+  .really-responsive-table.rrt-tablet {
+    table-layout: fixed;
+  }
   .really-responsive-table.rrt-tablet > thead {
     display: none;
   }

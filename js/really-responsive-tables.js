@@ -27,7 +27,7 @@
 			var colsLength = cols.length;
 			var pos = 0;
 			for (var i=0; i < colsLength; i++) {
-				var newElement = $(cols[pos]).clone();
+				var newElement = $(cols[pos]).clone(true, true);
 				newElement.addClass("really-responsive-table-header");
 				newElement.addClass("clearfix");
 				$(rows[rowIndex].cells[i]).before(newElement);
