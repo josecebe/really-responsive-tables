@@ -2,43 +2,43 @@
 $materializeBorderColor: #d0d0d0;
 
 @for $i from 1 through length($medias) {
-	$media: nth($medias, $i);
-	$class: nth($classes, $i);
-	$prefix: "";
-	@if $class == $default-class {
-		$prefix: ".really-responsive-table.materialize-table, .really-responsive-table.materialize-table." + $class;
-	} @else {
-		$prefix: ".really-responsive-table.materialize-table." + $class;
-	}
+    $media: nth($medias, $i);
+    $class: nth($classes, $i);
+    $prefix: "";
+    @if $class == $default-class {
+        $prefix: ".really-responsive-table.materialize-table, .really-responsive-table.materialize-table." + $class;
+    } @else {
+        $prefix: ".really-responsive-table.materialize-table." + $class;
+    }
 
-	// Normal table
-	@media #{$media} {
-		#{$prefix} {
-			> tbody {
-				> tr {
-					border-top: 1px solid $materializeBorderColor;
+    // Normal table
+    @media #{$media} {
+        #{$prefix} {
+            > tbody {
+                > tr {
+                    border-top: 1px solid $materializeBorderColor;
 
-					&:last-child {
-						border-bottom: 1px solid $materializeBorderColor;
-					}
-				}
-			}
-		}
-	}
+                    &:last-child {
+                        border-bottom: 1px solid $materializeBorderColor;
+                    }
+                }
+            }
+        }
+    }
 
-	// Bordered table
-	@if $class == $default-class {
-		$prefix: ".really-responsive-table.materialize-table.bordered, .really-responsive-table.materialize-table.bordered." + $class;
-	} @else {
-		$prefix: ".really-responsive-table.materialize-table.bordered." + $class;
-	}
-	@media #{$media} {
-		#{$prefix} {
-			> tbody {
-				> tr {
-					border-top: 1px solid $materializeBorderColor;
-				}
-			}
-		}
-	}
+    // Bordered table
+    @if $class == $default-class {
+        $prefix: ".really-responsive-table.materialize-table.bordered, .really-responsive-table.materialize-table.bordered." + $class;
+    } @else {
+        $prefix: ".really-responsive-table.materialize-table.bordered." + $class;
+    }
+    @media #{$media} {
+        #{$prefix} {
+            > tbody {
+                > tr {
+                    border-top: 1px solid $materializeBorderColor;
+                }
+            }
+        }
+    }
 }
