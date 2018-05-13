@@ -1,22 +1,25 @@
 (function() {
     this.ReallyResponsiveTables = function() {
-        
+
     }
 
-    ReallyResponsiveTables.prototype.init = function() {
-        var changing = false;
+    ReallyResponsiveTables.prototype = {
+        init: function() {
+            var changing = false;
 
-        $("table.really-responsive-table").each(function() {
-            rrt(this);
-        }).promise().done(function() {
-            $("table.really-responsive-table").bind("DOMSubtreeModified", function() {
-                if (!changing) {
-                    changing = true;
-                    rrt(this);
-                    changing = false;
-                }
+            $("table.really-responsive-table").each(function() {
+                rrt(this);
+
+            }).promise().done(function() {
+                $("table.really-responsive-table").bind("DOMSubtreeModified", function() {
+                    if (!changing) {
+                        changing = true;
+                        rrt(this);
+                        changing = false;
+                    }
+                });
             });
-        });
+        }
     }
 
     function rrt(table) {
@@ -27,10 +30,9 @@
             var colsLength = cols.length;
             var pos = 0;
             for (var i=0; i < colsLength; i++) {
-                var newElement = $(cols[pos]).clone(true, true);
-                newElement.addClass("really-responsive-table-header");
-                newElement.addClass("clearfix");
-                $(rows[rowIndex].cells[i]).before(newElement);
+                var $newElement = $(cols[pos]).clone(true, true);
+                $newElement.addClass("really-responsive-table-header clearfix");
+                $(rows[rowIndex].cells[i]).before($newElement);
                 pos++;
                 i++;
                 colsLength++;

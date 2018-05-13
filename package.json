@@ -1,25 +1,25 @@
 {
-  "name": "really-responsive-tables",
-  "version": "0.1.0",
-  "description": "Really Responsive Tables",
-  "main": "app.js",
-  "scripts": {
-    "scss-expanded": "node-sass sass/really-responsive-tables.scss css/really-responsive-tables.css --output-style expanded",
-    "scss-compressed": "node-sass sass/really-responsive-tables.scss css/really-responsive-tables.min.css --output-style compressed",
-    "js-compressed": "uglifyjs js/really-responsive-tables.js -o js/really-responsive-tables.min.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/josecebe/really-responsive-tables.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/josecebe/really-responsive-tables/issues"
-  },
-  "homepage": "https://github.com/josecebe/really-responsive-tables#readme",
-  "dependencies": {
-    "node-sass": "4.5.3",
-    "uglify-js": "3.0.28"
-  }
+    "name": "really-responsive-tables",
+    "version": "0.2.0",
+    "description": "Really Responsive Tables",
+    "main": "app.js",
+    "scripts": {
+        "scss-expanded": "node-sass sass/really-responsive-tables.scss css/really-responsive-tables.css --output-style expanded",
+        "scss-compressed": "node-sass sass/really-responsive-tables.scss css/really-responsive-tables.min.css --output-style compressed",
+        "js-compressed": "uglifyjs js/really-responsive-tables.js -o js/really-responsive-tables.min.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/josecebe/really-responsive-tables.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/josecebe/really-responsive-tables/issues"
+    },
+    "homepage": "https://github.com/josecebe/really-responsive-tables#readme",
+    "dependencies": {
+        "node-sass": "4.9.0",
+        "uglify-js": "3.3.24"
+    }
 }

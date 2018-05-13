@@ -1,0 +1,73 @@
+// Bootstrap variables
+$bootstrap4BorderColorLight: #dee2e6;
+$bootstrap4BorderColorDark:  #32383e;
+
+@for $i from 1 through length($medias) {
+    $media: nth($medias, $i);
+    $class: nth($classes, $i);
+    $prefix: "";
+    @if $class == $default-class {
+        $prefix: ".really-responsive-table.bootstrap-4-table, .really-responsive-table.bootstrap-4-table." + $class;
+    } @else {
+        $prefix: ".really-responsive-table.bootstrap-4-table." + $class;
+    }
+
+    // Normal table
+    @media #{$media} {
+        #{$prefix} {
+            > tbody {
+                > tr {
+                    border-top: 1px solid $bootstrap4BorderColorLight;
+
+                    &:last-child {
+                        border-bottom: 1px solid $bootstrap4BorderColorLight;
+                    }
+                }
+            }
+        }
+    }
+
+    // Bordered table
+    @if $class == $default-class {
+        $prefix: ".really-responsive-table.bootstrap-4-table.table-bordered, .really-responsive-table.bootstrap-4-table.table-bordered." + $class;
+    } @else {
+        $prefix: ".really-responsive-table.bootstrap-4-table.table-bordered." + $class;
+    }
+    @media #{$media} {
+        #{$prefix} {
+            > tbody {
+                > tr {
+                    border-top: 1px solid $bootstrap4BorderColorLight;
+
+                    &:first-child {
+                        border-top: 0;
+                    }
+
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Dark table
+    @if $class == $default-class {
+        $prefix: ".really-responsive-table.bootstrap-4-table.table-dark, .really-responsive-table.bootstrap-4-table.table-dark." + $class;
+    } @else {
+        $prefix: ".really-responsive-table.bootstrap-4-table.table-dark." + $class;
+    }
+    @media #{$media} {
+        #{$prefix} {
+            > tbody {
+                > tr {
+                    border-top: 1px solid $bootstrap4BorderColorDark;
+
+                    &:last-child {
+                        border-bottom: 1px solid $bootstrap4BorderColorDark;
+                    }
+                }
+            }
+        }
+    }
+}
